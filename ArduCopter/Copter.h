@@ -220,6 +220,7 @@ public:
     friend class ModeThrow;
     friend class ModeZigZag;
     friend class ModeAutorotate;
+    friend class ModeStabilize2;
 
     Copter(void);
 
@@ -950,6 +951,7 @@ private:
     ModeStabilize_Heli mode_stabilize;
 #else
     ModeStabilize mode_stabilize;
+    ModeStabilize2 mode_stabilize2;
 #endif
 #if MODE_SPORT_ENABLED == ENABLED
     ModeSport mode_sport;
@@ -978,7 +980,6 @@ private:
 #if MODE_AUTOROTATE_ENABLED == ENABLED
     ModeAutorotate mode_autorotate;
 #endif
-
     // mode.cpp
     Mode *mode_from_mode_num(const Mode::Number mode);
     void exit_mode(Mode *&old_flightmode, Mode *&new_flightmode);
